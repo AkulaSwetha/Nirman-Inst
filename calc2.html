@@ -1,0 +1,38 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+	Number1:<input type="number" ng-model="num1"><br>
+	Number2:<input type="number" ng-model="num2"><br><br>
+	<button ng-click="add(num1,num2)">add numbers</button><br><br>
+	<button ng-click="sub(num1,num2)">sub numbers</button><br><br>
+	<button ng-click="mul(num1,num2)">mul numbers</button><br><br>
+	<button ng-click="div(num1,num2)">div numbers</button><br><br>
+	{{result}}
+ </div>
+ <script>
+ 	var app=angular.module('myApp',[]);
+ 	app.controller('myCtrl',function($scope)
+ 	{
+ 		$scope.add=function(num1,num2)
+ 		{
+ 			$scope.result=num1+num2;
+ 		}
+ 		$scope.sub=function(num1,num2)
+ 		{
+ 			$scope.result=num1-num2;
+ 		}
+        $scope.mul=function(num1,num2)
+        {
+        	$scope.result=num1*num2;
+        }
+        $scope.div=function(num1,num2)
+        {
+        	$scope.result=num1/num2;
+        }
+ 	});
+ </script>
+</body>
+</html>
